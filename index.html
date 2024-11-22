@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6AI - Multi-Instance AI Comparison</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>6AI Comparison</h1>
+            <p class="subtitle">Compare responses from multiple AI instances</p>
+        </div>
+        
+        <div class="input-section">
+            <textarea id="userInput" placeholder="Enter your prompt here..."></textarea>
+            <button onclick="generateResponses()">Generate Responses</button>
+        </div>
+        
+        <div class="output-section">
+            <div class="model-output">
+                <div class="output-header">
+                    <h2>Instance #1</h2>
+                    <span class="output-label">Output 1</span>
+                </div>
+                <div id="box1Output" class="output-box">
+                    <div class="loading-spinner hidden"></div>
+                    <p class="response-text"></p>
+                </div>
+            </div>
+
+            <div class="model-output">
+                <div class="output-header">
+                    <h2>Instance #2</h2>
+                    <span class="output-label">Output 2</span>
+                </div>
+                <div id="box2Output" class="output-box">
+                    <div class="loading-spinner hidden"></div>
+                    <p class="response-text"></p>
+                </div>
+            </div>
+
+            <div class="model-output">
+                <div class="output-header">
+                    <h2>Instance #3</h2>
+                    <span class="output-label">Output 3</span>
+                </div>
+                <div id="box3Output" class="output-box">
+                    <div class="loading-spinner hidden"></div>
+                    <p class="response-text"></p>
+                </div>
+            </div>
+
+            <div class="model-output">
+                <div class="output-header">
+                    <h2>Instance #4</h2>
+                    <span class="output-label">Output 4</span>
+                </div>
+                <div id="box4Output" class="output-box">
+                    <div class="loading-spinner hidden"></div>
+                    <p class="response-text"></p>
+                </div>
+            </div>
+
+            <div class="model-output">
+                <div class="output-header">
+                    <h2>Instance #5</h2>
+                    <span class="output-label">Output 5</span>
+                </div>
+                <div id="box5Output" class="output-box">
+                    <div class="loading-spinner hidden"></div>
+                    <p class="response-text"></p>
+                </div>
+            </div>
+
+            <div class="model-output">
+                <div class="output-header">
+                    <h2>Instance #6</h2>
+                    <span class="output-label">Output 6</span>
+                </div>
+                <div id="box6Output" class="output-box">
+                    <div class="loading-spinner hidden"></div>
+                    <p class="response-text"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
