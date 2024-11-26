@@ -9,6 +9,9 @@ const GEMINI_KEYS = {
 };
 
 // Main function to generate responses
+const MISTRAL_API_KEY = 'LoOUBGIEsvhyC5m4S4lrstQJjXgRSaS1';
+
+// Main function to generate responses
 async function generateResponses() {
     const userInput = document.getElementById('userInput').value;
     if (!userInput.trim()) {
@@ -17,7 +20,7 @@ async function generateResponses() {
     }
 
     // Show loading spinners for all six boxes
-    const outputs = ['box1', 'box2', 'box3', 'box4', 'box5', 'box6'];
+    const outputs = ['box1', 'box2', 'box3', 'box4', 'box5', 'box6', 'mistral'];
     outputs.forEach(box => {
         const outputBox = document.getElementById(`${box}Output`);
         outputBox.querySelector('.loading-spinner').classList.remove('hidden');
@@ -32,7 +35,8 @@ async function generateResponses() {
             generateGeminiResponse(userInput, GEMINI_KEYS.box3),
             generateGeminiResponse(userInput, GEMINI_KEYS.box4),
             generateGeminiResponse(userInput, GEMINI_KEYS.box5),
-            generateGeminiResponse(userInput, GEMINI_KEYS.box6)
+            generateGeminiResponse(userInput, GEMINI_KEYS.box6),
+            generateMistralResponse(userInput)
         ]);
 
         // Display responses
@@ -81,6 +85,39 @@ async function generateGeminiResponse(prompt, apiKey) {
         return data.candidates[0].content.parts[0].text;
     } catch (error) {
         console.error('Gemini Error:', error);
+        return `Error: ${error.message}`;
+    }
+}
+
+// Mistral API Implementation
+async function generateMistralResponse(prompt) {
+    try {
+        const response = await fetch('https://api.mistral.ai/v1/chat/completions', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${MISTRAL_API_KEY}`
+            },
+            body: JSON.stringify({
+                model: "mistral-tiny",
+                messages: [{
+                    role: "user",
+                    content: prompt
+                }],
+                temperature: 0.7,
+                max_tokens: 1000
+            })
+        });
+
+        if (!response.ok) {
+            const error = await response.json();
+            throw new Error(error.error?.message || 'Mistral API error');
+        }
+
+        const data = await response.json();
+        return data.choices[0].message.content;
+    } catch (error) {
+        console.error('Mistral Error:', error);
         return `Error: ${error.message}`;
     }
 }
