@@ -1,9 +1,9 @@
 // API Keys for different instances
 const GEMINI_KEYS = {
-    box1: 'AIzaSyD1LsRepLFTSLD3p0vcsnoMyFfjhMkoSLQ',
+    box1: 'AIzaSyCa0FS8wFsH8tacFFvZaNAq1foSIjfRfjM',
     box2: 'AIzaSyAQhq5-kQR-lID_og3ANZKwihmlGm5quOA',
     box3: 'AIzaSyBiG7EC8TljHTnU_8OdXVDEz1ns-YOByU4',
-    box4: 'AIzaSyDOIeVM-20ZLujoMNS-87fMQhO5b1tvLhs',
+    box4: 'AIzaSyC0je4ivZQHo3LDydkrx1U2XS9RVsj8uEo',
     box5: 'AIzaSyCkydIPxmbY0CX7yGcWsC6-_eoO2mMaInM',
     box6: 'AIzaSyBhPgINrJrOBHdGShZZ4ZSfR8zaW_-0rIQ'
 };
