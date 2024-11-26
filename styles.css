@@ -79,7 +79,7 @@ button:hover {
 
 .output-section {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 25px;
 }
 
@@ -150,22 +150,14 @@ button:hover {
     color: #4a5568;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
     .output-section {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (max-width: 768px) {
-    body {
-        padding: 20px;
-    }
-    
+@media (max-width: 900px) {
     .output-section {
         grid-template-columns: 1fr;
-    }
-    
-    .header h1 {
-        font-size: 2rem;
     }
 }
